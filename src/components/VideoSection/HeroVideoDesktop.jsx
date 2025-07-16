@@ -117,7 +117,7 @@ const HeroVideoDesktop = () => {
   return (
     <div
       ref={containerRef}
-      className="hidden lg:grid grid-cols-[35%_65%] w-full max-w-[1536px] mx-auto relative min-h-screen items-center overflow-hidden"
+      className="hidden lg:grid grid-cols-[35%_65%] w-full max-w-[1536px] mx-auto relative py-20 h-screen overflow-hidden"
     >
 
       <div className="relative ml-40">
@@ -130,7 +130,7 @@ const HeroVideoDesktop = () => {
           style={{ height: `${tabHeight}px` }}
         />
 
-        <div className="flex flex-col gap-10 border-l-2 border-white/30 pl-14 py-2 relative">
+        <div className="flex flex-col gap-10 border-l-2 border-white/30 pl-14 py-5 relative">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -185,12 +185,14 @@ const HeroVideoDesktop = () => {
                     selectedPart === item.title ? "opacity-100" : "opacity-50"
                   }`}
                 >
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    width={80}
-                    height={80}
-                  />
+                  <div className="relative w-[80px] h-[80px]">
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                   <span className="mt-1 text-[12px] text-white font-light">
                     {item.title}
                   </span>

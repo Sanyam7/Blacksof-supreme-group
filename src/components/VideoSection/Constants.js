@@ -18,7 +18,7 @@ export const carPartImages = [
     video: "/assets/Passenger-Alpha.mp4",
   },
   { title: "Front", img: "/assets/front.png", video: "/assets/Front.mp4" },
-  { title: "Cabin", img: "/assets/cabin.png", video: "/assets/Cabin.mp4" },
+  { title: "Cabin", img: "/assets/Cabin.png", video: "/assets/Cabin.mp4" },
   { title: "Trunk", img: "/assets/trunk.png", video: "/assets/Trunk.mp4" },
   {
     title: "Exterior",
