@@ -2,6 +2,8 @@
 
 This is the official website for **Supreme Group**, built with [Next.js](https://nextjs.org/) and styled using [Tailwind CSS](https://tailwindcss.com/). The site includes animated hero sections, tabbed product showcases, and a responsive contact form — all optimized for performance and accessibility.
 
+Live Demo: https://blacksof-supreme-group.vercel.app/
+
 ---
 
 For this project, I opted to use local React state (useState, useRef, and useEffect) rather than integrating a global state management library such as Context API, Redux, or Zustand.
@@ -19,7 +21,7 @@ React’s built-in hooks provided a clean, efficient, and maintainable way to ma
 
 
 
-## 🛠️ Project Setup Instructions
+1. 🛠️ Project Setup Instructions
 
 ```bash
 git clone https://github.com/Sanyam7/Blacksof-supreme-group.git
@@ -28,7 +30,7 @@ npm install
 npm run dev
 ```
 
- Component Architecture Overview
+2. Component Architecture Overview
 The app uses a modular file structure for reusability and clarity:
 
 ```plaintext
@@ -51,7 +53,7 @@ Shared utilities like animations and transitions are abstracted when needed
 
 
 
- Responsive Design Strategy:
+3. Responsive Design Strategy:
 Tailwind CSS breakpoints: Used sm, md, lg, xl, and 2xl classes for adaptive layouts.
 grid & flex layouts: Used to handle column switching and vertical stacking on smaller devices.
 Video/image swaps: Conditional rendering between desktop and mobile using lg:hidden, hidden lg:block to provide device-specific UIs.
@@ -59,7 +61,7 @@ Font scaling: Dynamic typography via text-base, text-lg, text-2xl, etc.
 
 
 
-Performance Optimization Techniques:
+4. Performance Optimization Techniques:
 Lazy loading videos and heavy sections to defer initial load.
 Memoization (useMemo) of repeated render data (e.g., parts list).
 Conditional rendering for large components (e.g., mobile vs desktop hero).
@@ -69,7 +71,7 @@ Minimized re-renders through proper key props and state updates.
 
 
 
-Accessibility Considerations
+5. Accessibility Considerations
 
 Form accessibility:
 Labels are associated with inputs using htmlFor and id.
@@ -88,7 +90,7 @@ Images/videos (if added) should use appropriate alt or aria-labels
 
 
 
-Third-Party Libraries Used
+6. Third-Party Libraries Used
 Library	Purpose
 framer-motion:	Smooth animations and transitions
 animate.css:	Simple toast/modal animations
@@ -98,7 +100,7 @@ Tailwind CSS:	Utility-first styling
 
 
 
-Assumptions & Decisions:
+7. Assumptions & Decisions:
 Chose Tailwind CSS over traditional CSS for rapid UI development and responsiveness.
 Used Framer Motion selectively to avoid animation overhead.
 Avoided client-heavy libraries (like Swiper) unless necessary.
@@ -108,7 +110,7 @@ Componentized each major section (Hero, Navbar, Footer) for better maintainabili
 
 
 
- Challenges Faced & Solutions
+8. Challenges Faced & Solutions
  
 Embedding autoplaying video in background:	Used muted, autoPlay, loop, playsInline to ensure it plays on all devices
 Smooth scroll between sections:	Added ref + scroll handler on tab switch to enable animated scrolling
@@ -119,7 +121,7 @@ Tab switching performance lag (on mobile):	Debounced scroll events, and memoized
 
 
 
-Upcoming Features / Improvements:
+9. Upcoming Features / Improvements:
 Backend integration for Contact Form (e.g., EmailJS or API route)
 SEO and metadata improvements
 Add multi-language support via next-intl
