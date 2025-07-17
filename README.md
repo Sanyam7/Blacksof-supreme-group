@@ -31,16 +31,18 @@ npm run dev
  Component Architecture Overview
 The app uses a modular file structure for reusability and clarity:
 
+```plaintext
 src/
-├── app/                   # Next.js 13+ App directory
-├── components/            # Reusable UI components
-│   ├── navbar/            # Responsive navbar
-│   ├── hero/              # Hero section with video/text
-│   ├── features/          # Tabbed feature sections (e.g., Passenger, Commercial)
-│   ├── contact/           # Contact form with toast feedback
-│   └── footer/            # Sticky responsive footer
-├── public/                # Static assets (videos/images)
-└── styles/                # Global styles and Tailwind config
+├── app/ # Next.js 13+ App directory
+├── components/ # Reusable UI components
+│ ├── navbar/ # Responsive navbar
+│ ├── hero/ # Hero section with video/text
+│ ├── features/ # Tabbed feature sections (e.g., Passenger, Commercial)
+│ ├── contact/ # Contact form with toast feedback
+│ └── footer/ # Sticky responsive footer
+├── public/ # Static assets (videos/images)
+└── styles/ # Global styles and Tailwind config
+```
 
 Each section is broken into its own component file (e.g., HeroVideoDesktop.jsx, ContactForm.jsx, etc.)
 Responsiveness is handled through Tailwind’s responsive utilities.
