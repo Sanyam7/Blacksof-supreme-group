@@ -54,57 +54,58 @@ Shared utilities like animations and transitions are abstracted when needed
 
 
 3. Responsive Design Strategy:
-Tailwind CSS breakpoints: Used sm, md, lg, xl, and 2xl classes for adaptive layouts.
-grid & flex layouts: Used to handle column switching and vertical stacking on smaller devices.
-Video/image swaps: Conditional rendering between desktop and mobile using lg:hidden, hidden lg:block to provide device-specific UIs.
-Font scaling: Dynamic typography via text-base, text-lg, text-2xl, etc.
+      ### Responsive Design Strategy
+   
+   | Feature            | Implementation Details                                                                 |
+   |--------------------|-----------------------------------------------------------------------------------------|
+   | Breakpoints        | Used `sm`, `md`, `lg`, `xl`, and `2xl` classes for adaptive layouts                    |
+   | Layouts            | Leveraged `grid` and `flex` utilities for column switching and stacking on smaller screens |
+   | Media Switching    | Used `lg:hidden` and `hidden lg:block` for device-specific video/image rendering       |
+   | Font Scaling       | Responsive typography using `text-base`, `text-lg`, `text-2xl`, etc.                   |
+
 
 
 
 4. Performance Optimization Techniques:
-Lazy loading videos and heavy sections to defer initial load.
-Memoization (useMemo) of repeated render data (e.g., parts list).
-Conditional rendering for large components (e.g., mobile vs desktop hero).
-Next.js image optimization or fallback to optimized formats in /public.
-CSS animations only when in view (using intersection observer / scroll events).
-Minimized re-renders through proper key props and state updates.
+
+  - Lazy loading of videos and heavy sections to defer initial load.
+  - Memoization using `useMemo` for frequently rendered data (e.g., parts list).
+  - Conditional rendering of large components (e.g., switching between mobile and desktop hero).
+  - Next.js image optimization or fallback to optimized formats in the `/public` directory.
+  - CSS animations triggered only when in viewport (via Intersection Observer or scroll events).
+  - Reduced unnecessary re-renders through proper usage of `key` props and isolated state updates.
 
 
 
 5. Accessibility Considerations
 
-Form accessibility:
-Labels are associated with inputs using htmlFor and id.
-Validation errors are announced with aria-invalid.
 
-Keyboard navigation:
-Buttons and inputs are keyboard accessible.
-Close modal via keyboard (ESC) logic can be added for enhanced UX.
+  | Area                 | Implementation Details                                                                 |
+  |----------------------|-----------------------------------------------------------------------------------------|
+  | Form Accessibility   | Labels are linked to inputs using `htmlFor` and `id`. Validation uses `aria-invalid`.  |
+  | Keyboard Navigation  | Buttons and inputs are accessible. Modal can support ESC key for close (enhancement).  |
+  | Focus Indicators     | Used Tailwind’s `focus-visible` classes (`focus:outline-none`, `focus-visible:border-white`). |
+  | Alt Text & ARIA      | Images/videos should use descriptive `alt` attributes or `aria-label` for clarity.     |
 
-Focus indicators:
-Tailwind’s focus-visible states are used (focus:outline-none, focus-visible:border-white).
-
-Alt text & ARIA:
-Images/videos (if added) should use appropriate alt or aria-labels
 
 
 
 
 6. Third-Party Libraries Used
 Library	Purpose
-framer-motion:	Smooth animations and transitions
-animate.css:	Simple toast/modal animations
-next/image: Optimized image handling
-Tailwind CSS:	Utility-first styling
+- framer-motion:	Smooth animations and transitions
+- animate.css:	Simple toast/modal animations
+- next/image: Optimized image handling
+- Tailwind CSS:	Utility-first styling
 
 
 
 
 7. Assumptions & Decisions:
-Chose Tailwind CSS over traditional CSS for rapid UI development and responsiveness.
-Used Framer Motion selectively to avoid animation overhead.
-Avoided client-heavy libraries (like Swiper) unless necessary.
-Componentized each major section (Hero, Navbar, Footer) for better maintainability.
+- Chose Tailwind CSS over traditional CSS for rapid UI development and responsiveness.
+- Used Framer Motion selectively to avoid animation overhead.
+- Avoided client-heavy libraries (like Swiper) unless necessary.
+- Componentized each major section (Hero, Navbar, Footer) for better maintainability.
 
 
 
@@ -112,9 +113,12 @@ Componentized each major section (Hero, Navbar, Footer) for better maintainabili
 
 8. Challenges Faced & Solutions
  
-Embedding autoplaying video in background:	Used muted, autoPlay, loop, playsInline to ensure it plays on all devices
-Smooth scroll between sections:	Added ref + scroll handler on tab switch to enable animated scrolling
-Tab switching performance lag (on mobile):	Debounced scroll events, and memoized content rendering
+
+  | Challenge                                | Solution                                                                                         |
+  |------------------------------------------|--------------------------------------------------------------------------------------------------|
+  | Embedding autoplaying video in background | Used `muted`, `autoPlay`, `loop`, and `playsInline` to ensure consistent playback across devices. |
+  | Smooth scroll between sections            | Implemented `ref` + scroll handler with smooth animation on tab switch.                          |
+  | Tab switching performance lag (on mobile) | Applied debounce on scroll events and memoized heavy components to reduce re-renders.            |
 
 
 
@@ -122,8 +126,8 @@ Tab switching performance lag (on mobile):	Debounced scroll events, and memoized
 
 
 9. Upcoming Features / Improvements:
-Backend integration for Contact Form (e.g., EmailJS or API route)
-SEO and metadata improvements
-Add multi-language support via next-intl
-Unit tests for reusable components (with Jest + React Testing Library)
+- Backend integration for Contact Form (e.g., EmailJS or API route)
+- SEO and metadata improvements
+- Add multi-language support via next-intl
+- Unit tests for reusable components (with Jest + React Testing Library)
 
